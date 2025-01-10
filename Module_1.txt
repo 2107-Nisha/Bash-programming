@@ -1,0 +1,72 @@
+=============================Module 2=======================
+
+********Shell Metacharater**********
+
+1)Backslash -----reduces the special meaning of the special character 
+2)backQuotes
+3)dobleQuetes
+4)single quotes
+
+\n means newline
+\r means return
+\t means tab
+\b means backspace
+\a means "alert" (beep or flash)
+\" gives the quote its literal meaning
+\$ gives the dollar sign its literal meaning
+\\ gives the backslash its literal meaning
+
+
+********File substitution command*********
+* -> match zero or more characters, including null
+? -> match one occurrence of single character
+[abc] -> match one occurrence of characters between brackets
+[!abc] -> match any character or characters not between the brackets
+
+
+
+
+
+*********spcial character***************
+Shell Built-in Variables
+• $0 : filename
+• $# : number of arguments supplied to a script
+• $* : String containing arguments a script receives 
+• $@ : Array of arguments a script receives
+• $? : Exit status of the last command executed
+• $$ : Process ID number, or PID of current shell
+• S! : Process number of last background command
+
+
+***********Basic commands in linux****************
+pwd- print working dir
+mv-  move or rename the file
+cp - copy
+rm -remove
+rmdir- remove directory
+ps -list process on system
+
+**********VI editor commands****************
+
+<<<<<<<<<<<<<<<<<<<<Assignment>>>>>>>>>>>>>>>>>>
+
+• Q1: Write a script to list files under user’s home directory that ends with .txt.
+solution:-
+
+FILES=$( ls $HOME/*.txt )
+echo $FILES
+
+• Q2: Write a script to create file abc.txt and directory Test.
+ Rename file to ABC.txt and then move it to Test directory.
+
+
+solution:-
+
+#!bin/bash
+touch abc.txt            #create abc.txt file
+mkdir Test               #makedir command
+mv abc.txt ABC.txt	 #move the dir
+mv ABC.txt Test/         #move to test dir
+
+
+
