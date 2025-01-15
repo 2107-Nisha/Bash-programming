@@ -1,0 +1,64 @@
+*********************File handling************************
+
+1)Empty files can be created using touch command.
+2)When user want to write data in the file using > operator existing data from the file will be overwritten.
+E.g echo “Hello User” > file.txt
+cat file.txt
+Hello User.
+
+Using this echo command existing data from the file.txt will be overwritten.
+To avoid this problem >> operator is used to append data in the file.
+e.g. echo “Hello How are you” >> file.txt
+cat file.txt
+Hello User
+Hello How are you
+
+
+append--   >>
+override-- >
+
+
+---------Loops in file:-----
+
+for loop
+
+for item in apple banana cherry; do
+  echo "Fruit: $item"
+done
+
+Fruit: apple
+Fruit: banana
+Fruit: cherry
+
+
+while loop
+
+i=1
+while [ $i -le 5 ]; do
+  echo "Number $i"
+  ((i++))  # Increment i by 1
+done
+
+
+Number 1
+Number 2
+Number 3
+Number 4
+Number 5
+
+
+IFS-internal field seprator
+
+internal field seprator by default space new line or any other field.
+
+#!/bin/sh
+old_IFS=$IFS # save the field separator 
+IFS=$'\n' # new field separator, the end of line 
+for line in $(cat file.txt) 
+do 
+echo $line 
+done 
+IFS=$old_IFS # restore default field separator
+
+
+
